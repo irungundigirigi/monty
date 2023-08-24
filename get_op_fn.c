@@ -1,9 +1,9 @@
 #include "monty.h"
 
 /**
- * get_op_fn - gets correspondng operator function
- * @token1: 1st bytecode input 
- * Return: pointer to the correct operation function
+ * get_op_fn - Gets corresponding operator function.
+ * @token1: 1st bytecode input.
+ * Return: Pointer to the correct operation function.
  */
 void (*get_op_fn(char *token1))(stack_t **stack, unsigned int line_number)
 {
@@ -25,13 +25,13 @@ void (*get_op_fn(char *token1))(stack_t **stack, unsigned int line_number)
 		{NULL, NULL}
 	};
 
-    int i;
-	
+	int i;
+
 	for (i = 0; instruction_s[i].op != NULL; i++)
 	{
 		if (strcmp(token1, instruction_s[i].op) == 0)
-			return instruction_s[i].f;
+			return (instruction_s[i].f);
 	}
-	
-	return NULL;
+
+	return (NULL);
 }
