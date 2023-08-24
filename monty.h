@@ -39,7 +39,7 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_no);
 } instruction_t;
 
-
+void (*get_op_fn(char *token1))(stack_t **stack, unsigned int line_number);
 void push(stack_t **head, unsigned int line_no, const char *n);
 int add_end_node(stack_t **head, int n);
 void free_dlist(stack_t **head);
