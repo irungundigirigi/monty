@@ -56,8 +56,16 @@ int main(int argc, char *argv[])
 		}
 		else
 		{   
-            //Looks up and executes correct operator function
-			printf("Implement fn search");
+            if (get_op_fn(token) != 0)
+			{
+				get_op_fn(token)(&head, line);
+			}
+			else
+			{
+				free_dlist(&head);
+				printf("L%d: unknown instruction %s\n", line, cmd_tkn);
+				exit(EXIT_FAILURE);
+			}
 		}
 		line++;
 		cmd_tkn = strtok(NULL, "\n\t\a\r ;:");
