@@ -14,36 +14,36 @@ int main(int argc, char *argv[])
 	char *buff, *cmd_tkn;
 	stack_t *head = NULL; 
 
-	if (argc != 2) //Check for correct no of command line args
+	if (argc != 2) 
 	{
 		printf("USAGE: No file argument\n");
 		exit(EXIT_FAILURE);
 	}    
-	fd = open(argv[1], O_RDONLY); //Open specified file for reading
+	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
 	{
 		printf("Error: Can't find file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	buff = malloc(sizeof(char) * 10000); //Allocate memory for reading file contents
+	buff = malloc(sizeof(char) * 10000); 
 	if (!buff)
 		return (0);
 
-	bytes_r = read(fd, buff, 10000); //Read the files content into buff
+	bytes_r = read(fd, buff, 10000); 
 	if (bytes_r == -1)
 	{
 		free(buff);
 		close(fd);
 		exit(EXIT_FAILURE);
 	}
-	cmd_tkn = strtok(buff, "\n\t\a\r ;:"); //cmd_tknize buff to read individual commands
+	cmd_tkn = strtok(buff, "\n\t\a\r ;:"); 
 	while (cmd_tkn != NULL)
 	{
 		if (was_push == 1)
 		{           
-			push(&head, line, cmd_tkn); //Process was_push command - adds value to stack
+			push(&head, line, cmd_tkn); 
 			was_push = 0;
-			cmd_tkn = strtok(NULL, "\n\t\a\r ;:"); //returns next token
+			cmd_tkn = strtok(NULL, "\n\t\a\r ;:"); 
 			line++;
 			continue;
 		}
