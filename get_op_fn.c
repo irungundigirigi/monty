@@ -25,11 +25,11 @@ void (*get_op_fn(char *token1))(stack_t **stack, unsigned int line_number)
 		{NULL, NULL}
 	};
 
-    int i
+    int i;
 	
-	for (i = 0; instruction_s[i].opcode != NULL; i++)
+	for (i = 0; instruction_s[i].op != NULL; i++)
 	{
-		if (strcmp(token1, instruction_s[i].opcode) == 0)
+		if (strcmp(token1, instruction_s[i].op) == 0)
 			return instruction_s[i].f;
 	}
 	

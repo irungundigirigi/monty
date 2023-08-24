@@ -56,9 +56,9 @@ int main(int argc, char *argv[])
 		}
 		else
 		{   
-            if (get_op_fn(token) != 0)
+            if (get_op_fn(cmd_tkn) != 0)
 			{
-				get_op_fn(token)(&head, line);
+				get_op_fn(cmd_tkn)(&head, line);
 			}
 			else
 			{

@@ -1,24 +1,4 @@
 #include "monty.h"
-
-/**
- * is_number - checks each character of string to check of isdigit
- * @n: integer
- * Return: 0 if is number, else -1 if not
- */
-int is_num(const char *n)
-{
-	int i = 0;
-
-	if (*n == '-')
-		i = 1;
-	for (; *(n + i) != '\0'; i++)
-	{
-		if (isdigit(*(n + i)) == 0)
-			return (-1);
-	}
-	return (0);
-}
-
 /**
  * add_end_node - add node to front of doubly linked list
  * @h: pointer to head of list
@@ -32,6 +12,7 @@ int add_end_node(stack_t **head, int n)
 	if (!head)
 		return (-1);
 
+	/* malloc and set new node data */
 	new = malloc(sizeof(struct stack_s));
 	if (!new)
 	{
@@ -55,30 +36,26 @@ int add_end_node(stack_t **head, int n)
 	}
 	return (0);
 }
-
 /**
- * push - adds node to the start of doubly linked list (stack)
- * @head: head of linked list 
- * @line_no: line number
- * @n: integer
+ * delete_end_node - deletes node at end of doubly linked list
+ * @h: pointer to head of doubly linked list
  */
-void push(stack_t **head, unsigned int line_no, const char *n)
+void delete_end_node(stack_t **head)
 {
-	if (!head)
-		return;
-	if (is_num(n) == -1)
+	stack_t *del = NULL;
+
+	/* account for only one node in list */
+	del = *head;
+	if ((*head)->next == NULL)
 	{
-		printf("L%u: usage: Push int only\n", line_no);
-		free_dlist(head);
-		exit(EXIT_FAILURE);
+		*head = NULL;
+		free(del);
 	}
 	else
 	{
-		if (add_end_node(head, atoi(n)) == -1)
-		{
-			free_dlist(head);
-			exit(EXIT_FAILURE);
-		}
+		*head = (*head)->next;
+		(*head)->prev = NULL;
+		free(del);
 	}
 }
 /**

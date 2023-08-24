@@ -39,8 +39,24 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_no);
 } instruction_t;
 
-void (*get_op_fn(char *token1))(stack_t **stack, unsigned int line_number);
+void (*get_op_fn(char *token1))(stack_t **stack, unsigned int line_no);
+void _add(stack_t **head, unsigned int line_no);
+void _sub(stack_t **head, unsigned int line_no);
+void _mul(stack_t **head, unsigned int line_no);
+void _div(stack_t **head, unsigned int line_no);
+void _mod(stack_t **head, unsigned int line_no);
 void push(stack_t **head, unsigned int line_no, const char *n);
+void pop(stack_t **head, unsigned int line_no);
+void pint(stack_t **head, unsigned int line_no);
+void pall(stack_t **head, unsigned int line_no);
+void swap(stack_t **head, unsigned int line_no);
+void nop(stack_t **head, unsigned int line_no);
+void pchar(stack_t **head, unsigned int line_no);
+void pstr(stack_t **head, unsigned int line_no);
+void rotl(stack_t **head, unsigned int line_no);
+void rotr(stack_t **head, unsigned int line_no);
+
 int add_end_node(stack_t **head, int n);
+void delete_end_node(stack_t **head);
 void free_dlist(stack_t **head);
 #endif
