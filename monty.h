@@ -39,6 +39,13 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_no);
 } instruction_t;
 
+void usage_error(void);
+int open_file(const char *filename);
+char *read_file(int fd);
+void execute_instruction(stack_t **head, char *cmd_tkn, unsigned int line);
+void free_resources(stack_t **head, char *buff, int fd);
+void parse_and_execute(char *buff, stack_t **head);
+
 void (*get_op_fn(char *token1))(stack_t **stack, unsigned int line_no);
 void _add(stack_t **head, unsigned int line_no);
 void _sub(stack_t **head, unsigned int line_no);

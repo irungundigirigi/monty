@@ -17,7 +17,7 @@ int is_number(const char *n)
 			return (-1);
 	}
 	return (0);
-}
+};
 /**
  * push - adds node to the start of dlinkedlist
  * @head: head of linked list (node at the bottom of stack)
@@ -42,7 +42,7 @@ void push(stack_t **head, unsigned int line_no, const char *n)
 			exit(EXIT_FAILURE);
 		}
 	}
-}
+};
 /**
  * pop - removes node at front of dlinkedlist
  * @head: head of linked list (node at the bottom of stack)
@@ -58,4 +58,4 @@ void pop(stack_t **head, unsigned int line_no)
 	}
 	else
 		delete_end_node(head);
-}
+};

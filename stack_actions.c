@@ -1,7 +1,7 @@
 #include "monty.h"
 /**
  * add_end_node - add node to front of doubly linked list
- * @h: pointer to head of list
+ *@head: pointer to head of list
  * @n: node data
  * Return: 0 if success, -1 if failed
  */
@@ -35,10 +35,10 @@ int add_end_node(stack_t **head, int n)
 		*head = new;
 	}
 	return (0);
-}
+};
 /**
  * delete_end_node - deletes node at end of doubly linked list
- * @h: pointer to head of doubly linked list
+ *@head: pointer to head of doubly linked list
  */
 void delete_end_node(stack_t **head)
 {
@@ -57,10 +57,10 @@ void delete_end_node(stack_t **head)
 		(*head)->prev = NULL;
 		free(del);
 	}
-}
+};
 /**
  * free_dlist - frees a doubly linked list with only int data, no strings
- * @h: pointer to head of list
+ *@head: pointer to head of list
  */
 void free_dlist(stack_t **head)
 {
@@ -73,4 +73,4 @@ void free_dlist(stack_t **head)
 		free((*head)->prev);
 	}
 	free(*head);
-}
+};

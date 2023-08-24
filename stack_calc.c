@@ -1,7 +1,7 @@
 #include "monty.h"
 /**
  * _add - adds the top two elements in stack
- * @head: pointer to top of the node 
+ * @head: pointer to top of the node
  * @line_no: command line
  */
 void _add(stack_t **head, unsigned int line_no)
@@ -73,7 +73,7 @@ void _div(stack_t **head, unsigned int line_no)
 }
 /**
  * _mod - modulus of second top node from top node
- * @head: pointer to top of the node 
+ * @head: pointer to top of the node
  * @line_no: command line
  */
 void _mod(stack_t **head, unsigned int line_no)

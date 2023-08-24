@@ -23,9 +23,9 @@ void pint(stack_t **head, unsigned int line_no)
 void pall(stack_t **head, unsigned int line_no)
 {
 	stack_t *tmp = NULL;
-    (void) line_no;
+	(void) line_no;
 
-	if (!*head || !head) 
+	if (!*head || !head)
 		return;
 
 	tmp = *head;
