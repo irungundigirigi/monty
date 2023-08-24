@@ -1,3 +1,14 @@
+#ifndef MONTY_H
+#define MONTY_H
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+#include <ctype.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -24,6 +35,12 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+        char *op;
+        void (*f)(stack_t **stack, unsigned int line_no);
 } instruction_t;
+
+
+void push(stack_t **head, unsigned int line_no, const char *n);
+int add_end_node(stack_t **head, int n);
+void free_dlist(stack_t **head);
+#endif
