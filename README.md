@@ -31,7 +31,7 @@ $ make
 
 
 Examples:
-`$ cat opcodetestfile.m`
+`$ cat file.m`
 
 `push 1`
 
@@ -41,7 +41,7 @@ Examples:
 
 `pall`
 
-`$ ./montyfile opcodetestfile.m`
+`$ ./montyfile file.m`
 
 `3`
 
@@ -53,7 +53,7 @@ Examples:
 
 ---
 
-`$ cat opcodetestfile.m`
+`$ cat file.m`
 
 `push 1`
 
@@ -67,7 +67,7 @@ Examples:
 
 `pall`
 
-`$ ./montyfile opcodetestfile.m`
+`$ ./montyfile file.m`
 
 `3`
 
